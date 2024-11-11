@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package test_data;
+
+
+message NumberRequest {
+  int32 data = 1; // 
+}
+
+message NumberResponse {
+  string message = 1; // 
+}
+
+service ClientService {
+  rpc ReceiveData(NumberRequest) returns (NumberResponse);
+}
+
+service ProcessingService {
+  rpc ProcessData(NumberRequest) returns (NumberResponse);
+}
